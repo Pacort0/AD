@@ -14,7 +14,7 @@ public class Ejercicio01 {
 			//Fichero en el que escribiremos
 			BufferedWriter bw = new BufferedWriter(new FileWriter("palabrasSeparadasOrdenadas.txt"));
 			//Lista en la que guardaremos y ordenadoremos las palabras del texto a leer 
-			List<String> palabras = new ArrayList<String>();;
+			List<String> palabras = new ArrayList<String>();
 			
 			String linea = br.readLine(); //Leemos la primera linea
 			while(linea!=null) { //Mientras la línea leída no sea null
