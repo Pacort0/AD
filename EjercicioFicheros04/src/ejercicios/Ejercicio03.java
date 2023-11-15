@@ -22,10 +22,11 @@ public class Ejercicio03 {
 				ralf.write(i);
 				ralf.write(saltoLinea);
 			}
+			ralf.seek(0);
 			while(ralf.getFilePointer() < ralf.length()) {
 				ralf.seek(posicion);
 				ralf.write(numero1);
-				posicion++;
+				posicion+=2;
 				numero1++;
 			}
 			
