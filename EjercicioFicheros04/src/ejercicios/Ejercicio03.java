@@ -40,17 +40,17 @@ public class Ejercicio03 {
 			RandomAccessFile ficheroInverso = new RandomAccessFile(ficheroReverso, "rw");
 			
 			int letra;
-			int posicion = 0;
-			int posicionFicheroOG = (int)ralf.length()-2;
+			int posicionFicheroOG = (int)ralf.length()-4;
 
 			while(posicionFicheroOG >=0) {
-				posicionFicheroOG--;
 				ralf.seek(posicionFicheroOG);
 				letra = ralf.readByte();
 				ficheroInverso.write(letra);
 				posicionFicheroOG++;
-				posicion++;
-				posicionFicheroOG-=2;
+				letra = ralf.readByte();
+				ficheroInverso.write(letra);
+				posicionFicheroOG++;
+				posicionFicheroOG-=4;
 			}
 			ficheroInverso.close();
 			
