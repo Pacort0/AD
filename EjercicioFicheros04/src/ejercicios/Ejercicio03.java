@@ -1,4 +1,4 @@
-package ejercicios;
+ package ejercicios;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,13 +20,8 @@ public class Ejercicio03 {
 			
 			for(int i = letraA; i<=letraE; i++) {
 				ralf.write(i);
-				ralf.write(saltoLinea);
-			}
-			ralf.seek(0);
-			while(ralf.getFilePointer() < ralf.length()) {
-				ralf.seek(posicion);
 				ralf.write(numero1);
-				posicion+=2;
+				ralf.write(saltoLinea);
 				numero1++;
 			}
 			
@@ -49,12 +44,13 @@ public class Ejercicio03 {
 			int posicionFicheroOG = (int)ralf.length()-2;
 
 			while(posicionFicheroOG >=0) {
+				posicionFicheroOG--;
 				ralf.seek(posicionFicheroOG);
-				ficheroInverso.seek(posicion);
 				letra = ralf.readByte();
 				ficheroInverso.write(letra);
+				posicionFicheroOG++;
 				posicion++;
-				posicionFicheroOG--;
+				posicionFicheroOG-=2;
 			}
 			ficheroInverso.close();
 			
