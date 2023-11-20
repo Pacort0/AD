@@ -9,6 +9,7 @@ public class Ejercicio01 {
 
 	public static void main(String[] args) {
 		int letraA = 97;
+		int saltoLinea = 10;
 		try {
 			File ficheroA = new File("FicheroEj1A.txt");
 			ficheroA.createNewFile();
@@ -20,7 +21,7 @@ public class Ejercicio01 {
 			ralfA.write(letraA);
 			for(int i=0; i<5;i++) {
 				ralfB.write(letraA);
-				ralfB.write(10);
+				ralfB.write(saltoLinea);
 			}
 			ralfA.close();
 			ralfB.close();
