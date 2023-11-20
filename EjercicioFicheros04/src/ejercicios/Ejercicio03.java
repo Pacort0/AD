@@ -47,22 +47,23 @@ public class Ejercicio03 {
 			//Variable que usaremos para mover el puntero del fichero a donde nos convenga
 			//Inicializamos a la posición de la primera letra, o longitud del fichero menos el salto de línea y el número
 			int posicionFicheroOG = (int)ralf.length()-3; 
-
-			//Mientras el valor del puntero no sea inferior a 0
-			while(posicionFicheroOG >=0) {
+			
+			//Bucle for para iterar el fichero original desde la primera letra por el final, restando 5 en cada iteración
+			for(;posicionFicheroOG>=0;posicionFicheroOG-=5) {
+				
 				ralf.seek(posicionFicheroOG); //Cambiamos el puntero del fichero original a la primea letra por el final
 				letra = ralf.readByte(); //Leemos la letra en esa posición
 				ficheroInverso.write(letra); //Escribimos la letra en el fichero nuevo
+				
 				posicionFicheroOG++; //Aumentamos la posicion del puntero en un valor para acceder a la posicion del numero
 				letra = ralf.readByte(); //Leemos el numero
 				ficheroInverso.write(letra); //Escribimos el número
+				
 				posicionFicheroOG++; //Aumentamos la posicion del puntero en un valor para acceder a la posicion del salto de linea
 				letra = ralf.readByte(); //Leemos y escribimos el salto de línea
 				ficheroInverso.write(letra);
-				posicionFicheroOG-=5; //Nos vamos a la siguiente letra del fichero
 			}
 			ficheroInverso.close(); //Cerramos el fichero
-			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
